@@ -13,6 +13,7 @@ import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = ActivityBuildersModule.AuthActivitySubcomponent.class)
+//@Module
 public abstract class ActivityBuildersModule {
    //@ContributesAndroidInjector(modules={AuthModule.class, AuthViewModelsModule.class})
    // abstract AuthActivity contributeAuthActivity();
@@ -22,7 +23,7 @@ public abstract class ActivityBuildersModule {
     abstract AndroidInjector.Factory<?> bindAndroidInjectorFactory(
             AuthActivitySubcomponent.Factory builder);
 
-    @Subcomponent(modules = AuthViewModelsModule.class)
+    @Subcomponent(modules = {AuthModule.class, AuthViewModelsModule.class})
     public interface AuthActivitySubcomponent extends AndroidInjector<AuthActivity> {
         @Subcomponent.Factory
         interface Factory extends AndroidInjector.Factory<AuthActivity> {}
