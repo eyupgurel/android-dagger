@@ -74,4 +74,8 @@ dependencies {
     api 'com.google.dagger:dagger-android:2.22'
     api 'com.google.dagger:dagger-android-support:2.22' // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.22'
+
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
 }
